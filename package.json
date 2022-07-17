@@ -1,0 +1,31 @@
+{
+  "name": "pina-dashboard",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "ejs": "~3.1.7",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "http-errors": "~1.6.3",
+    "humanize-duration": "^3.27.0",
+    "mongoose": "^5.13.3",
+    "nanoid": "^3.1.31",
+    "node-fetch": "^2.6.7",
+    "passport": "^0.4.1",
+    "passport-discord": "^0.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
