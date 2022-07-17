@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "engines": {
     "node": "14.x"
   },
   "dependencies": {
+    "body-parser": "^1.20.0",
     "cookie-parser": "~1.4.4",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
@@ -19,6 +20,7 @@
     "express-validator": "^6.12.1",
     "http-errors": "~1.6.3",
     "humanize-duration": "^3.27.0",
+    "memorystore": "^1.6.7",
     "mongoose": "^5.13.3",
     "nanoid": "^3.1.31",
     "node-fetch": "^2.6.7",
