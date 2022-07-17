@@ -61,13 +61,11 @@ module.exports = async (client) => {
       index: require('./routes/index'),
       dashboard: require('./routes/dashboard'),
       team: require('./routes/equipo'),
-      reportes: require('./routes/reportes'),
     };
 
     app.use('/', routers.index);
     app.use('/dashboard', routers.dashboard);
     app.use('/equipo', routers.team);
-    app.use('/report', routers.reportes)
 
     // 404 error page
     app.get('*', (req, res) => {
