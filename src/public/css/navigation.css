@@ -41,6 +41,13 @@
 .nav-item {
     display: inline-block;
     grid-row: 1/2;
+    border-radius: 5px;
+    max-width: 150px;
+}
+
+.nav-item:hover {
+    background-color: #2a3841;
+    transition: all 0.3s linear;
 }
 
 .nav-item.active .item-link {
@@ -57,7 +64,6 @@
 
 .item-link:hover {
     color: var(--yellow-primary);
-    text-decoration: underline;
 }
 
 #login-icon {
