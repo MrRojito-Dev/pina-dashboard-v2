@@ -5,29 +5,36 @@
 
   <%- include('partials/header'); -%>
 
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
   <%- include('partials/navbar'); -%>
 
   <main class="main-container text-center">
     <h1><strong class="yellow-primary"><%= title %></strong></h1>
-    <div id="user-welcome">
-        <p id="user-welcome-text">
-          <% if (user) { %>
+    <div class="user-welcome">
+      <% if (user) { %>
+        <p class="user-welcome-text">
             ¡Bienvenido, <%= user.tag %>!
         </p>
-            <img src="<%= user.displayAvatarURL({ dynamic: true }) %>" alt="Avatar de <%= user.username %>">
+        <div class="user-welcome-image">
+          <img src="<%= user.displayAvatarURL({ dynamic: true }) %>" alt="Avatar de <%= user.username %>">
+        </div>
             <div class="panel-button" style="margin-top: 20px;">
               <a class="btn btn-info w-100" href="/dashboard">
                 <i class="fas fa-cog"></i> Ir al panel
               </a>
             </div>
           <% } else { %>
-            ¡Bienvenido, inicia sesión para continuar!
         </p>
-          <a class="btn btn-warning w-50 login" id="login-button" href="/login">
-            <i class="fab fa-discord"></i>  Iniciar sesión
-          </a>
+        <p class="bot-description">
+          Una bot multipropósito con comandos de diversión, utilidad, música, economía, interacción, configuración y más.
+        </p>
+        <a class="login-button btn btn-warning w-50" href="/login">
+          <div class="login-button-text">
+            Iniciar sesión
+          </div>
+        </a>
         <% } %>
     </div>
   </main>

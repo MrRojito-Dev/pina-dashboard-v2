@@ -94,8 +94,7 @@ a:hover {
 .main-container {
   display: grid;
   place-content: center;
-  margin: 10px;
-  margin-top: 20vh;
+  padding-top: 80px;
   justify-content: center;
 }
 
