@@ -57,15 +57,13 @@ module.exports = async (client) => {
 
     app.use(express.static(path.join(__dirname, 'public')));
 
-    let routers = {
+    const routers = {
       index: require('./routes/index'),
       dashboard: require('./routes/dashboard'),
-      team: require('./routes/equipo'),
     };
 
     app.use('/', routers.index);
     app.use('/dashboard', routers.dashboard);
-    app.use('/equipo', routers.team);
 
     // 404 error page
     app.get('*', (req, res) => {
