@@ -46,10 +46,22 @@
 }
 
 .server-button {
-    font-weight: bold;
     display: flex;
-    width: 50%;
-    height: 40px;
+    align-content: center;
+    justify-content: center;
+    padding-inline-end: 40px;
+    padding-inline-start: 40px;
+    min-height: 40px;
+    min-width: 120px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 8px;
+}
+
+.server-button-text {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     align-content: center;
+    justify-content: center;
 }

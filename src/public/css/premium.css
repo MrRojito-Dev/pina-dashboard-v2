@@ -1,15 +1,14 @@
-.premium-benefits {
-    margin-top: 10px;
+.premium-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.premium-benefits-list {
-    list-style: none;
-    padding: 10px;
-}
-
-.premium-general-benefit {
-    font-size: 17px;
-    margin-top: 10px;
+.premium-welcome-text {
+    margin-bottom: 40px;
+    width: min(100%, 600px);
+    font-size: 15px;
 }
 
 .cards-container {
@@ -21,6 +20,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    padding: 0px 40px;
 }
 
 .premium-cards {

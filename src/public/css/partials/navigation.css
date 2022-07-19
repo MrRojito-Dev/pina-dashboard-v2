@@ -86,7 +86,6 @@
     align-content: center;
     cursor: pointer;
     transition: all 0.5s linear;
-    border-radius: 5px;
 }
 
 .user-icon:hover {
@@ -104,7 +103,6 @@
     min-width: 32px;
     max-width: 32px;
     border: 1px solid var(--dark-border);
-    border-radius: 80px;
 }
 
 #arrow-menu {

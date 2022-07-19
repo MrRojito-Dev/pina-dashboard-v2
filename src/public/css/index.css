@@ -34,7 +34,7 @@
 }
 
 /* User loged page */
-.user-welcome-image img {
+.user-welcome-image {
     margin: 10px;
     border: 1px solid var(--dark-border);
     border-radius: 80px;

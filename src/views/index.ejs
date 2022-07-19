@@ -17,9 +17,7 @@
         <p class="user-welcome-text">
             ¡Bienvenido, <%= user.tag %>!
         </p>
-        <div class="user-welcome-image">
-          <img src="<%= user.displayAvatarURL({ dynamic: true }) %>" alt="Avatar de <%= user.username %>">
-        </div>
+        <img class="user-welcome-image" src="<%= user.displayAvatarURL({ dynamic: true }) %>" alt="Avatar de <%= user.username %>">
             <div class="panel-button" style="margin-top: 20px;">
               <a class="btn btn-info w-100" href="/dashboard">
                 <i class="fas fa-cog"></i> Ir al panel

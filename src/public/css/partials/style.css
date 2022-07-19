@@ -71,9 +71,6 @@ strong {
   color: var(--yellow-strong);
 }
 
-.yellow-primary {
-  color: var(--yellow-primary);
-}
 
 a {
   color: var(--yellow-primary);
@@ -85,26 +82,16 @@ a:hover {
   color: var(--yellow-strong);
 }
 
-.container {
-  background-color: var(--container-bg);
-  border: 1px solid var(--dark-border);
-  border-radius: 5px;
-}
-
 .main-container {
   display: grid;
   place-content: center;
-  padding-top: 80px;
   justify-content: center;
+  margin: 0px auto;
+  padding: 80px 40px;
 }
 
 .main-content {
   margin-top: 3vh;
-}
-
-#user-welcome img {
-  border: 1px solid var(--dark-border);
-  border-radius: 80px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -114,4 +101,19 @@ a:hover {
 
 ::-webkit-scrollbar-track {
   background-color: #141412;
+}
+
+/* Vars */
+.rounded-full {
+  border-radius: 9999px!important;
+}
+
+.container {
+  background-color: var(--container-bg);
+  border: 1px solid var(--dark-border);
+  border-radius: 5px;
+}
+
+.yellow-primary {
+  color: var(--yellow-primary);
 }
