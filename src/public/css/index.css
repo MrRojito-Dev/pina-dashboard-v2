@@ -13,7 +13,7 @@
     font-size: 16px;
 }
 
-.login-button {
+.welcome-button {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -22,10 +22,9 @@
     min-height: 56px;
     font-size: 16px;
     line-height: 24px;
-    border-radius: 8px;
 }
 
-.login-button-text {
+.welcome-button-text {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -37,5 +36,60 @@
 .user-welcome-image {
     margin: 10px;
     border: 1px solid var(--dark-border);
-    border-radius: 80px;
+    border-radius: 60px;
+}
+
+/* Bot features */
+.bot-features {
+    padding: 80px 32px;
+}
+
+@media screen and (min-width: 1024px) {
+    .bot-features {
+        max-width: 960px;
+    }
+}
+
+.bot-feature {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.bot-feature-description {
+    line-height: 1.25;
+}
+
+.bot-feature-text {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.bot-feature-image {
+    margin-left: 30px;
+}
+.feature-image {
+    border-radius: 15px;
+    border: 2px solid var(--dark-border);
+}
+
+
+.reverse {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.home-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #ffffff1a;
+    margin: 60px 0px;
 }

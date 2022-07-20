@@ -71,6 +71,9 @@ strong {
   color: var(--yellow-strong);
 }
 
+img {
+  max-width: 100%;
+}
 
 a {
   color: var(--yellow-primary);
@@ -80,6 +83,10 @@ a {
 
 a:hover {
   color: var(--yellow-strong);
+}
+
+.btn {
+  border-radius: 8px;
 }
 
 .main-container {
@@ -95,12 +102,13 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
   background-color: #ebe851;
-  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #141412;
+  border-radius: 10px;
+  background-color: #2c2f33;
 }
 
 /* Vars */

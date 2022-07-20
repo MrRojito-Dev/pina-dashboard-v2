@@ -12,29 +12,60 @@
 
   <main class="main-container text-center">
     <h1><strong class="yellow-primary"><%= title %></strong></h1>
-    <div class="user-welcome">
+    <header class="user-welcome">
+      <p class="bot-description">
+        Una bot multipropósito con comandos de diversión, utilidad, música, economía, interacción, configuración y más.
+      </p>
       <% if (user) { %>
         <p class="user-welcome-text">
-            ¡Bienvenido, <%= user.tag %>!
+          👋 ¡Holaa, <%= user.tag %>! :D
         </p>
-        <img class="user-welcome-image" src="<%= user.displayAvatarURL({ dynamic: true }) %>" alt="Avatar de <%= user.username %>">
-            <div class="panel-button" style="margin-top: 20px;">
-              <a class="btn btn-info w-100" href="/dashboard">
-                <i class="fas fa-cog"></i> Ir al panel
-              </a>
-            </div>
+            <a class="welcome-button btn btn-info w-50" href="/dashboard">
+              <div class="welcome-button-text">
+                Ir al panel
+              </div>
+            </a>
+          </div>
           <% } else { %>
-        </p>
-        <p class="bot-description">
-          Una bot multipropósito con comandos de diversión, utilidad, música, economía, interacción, configuración y más.
-        </p>
-        <a class="login-button btn btn-warning w-50" href="/login">
-          <div class="login-button-text">
+        <a class="welcome-button btn btn-warning w-50" href="/login">
+          <div class="welcome-button-text">
             Iniciar sesión
           </div>
         </a>
         <% } %>
-    </div>
+    </header>
+    <div class="home-divider"></div>
+    <section class="bot-features">
+        <div class="bot-feature animate__animated animate__fadeInUp">
+          <div class="bot-feature-text">
+            <h3 class="bot-feature-title">¡Diversión para todos!</h3>
+            <p class="bot-feature-description">Haz que los miembros de tu servidor se diviertan con muchos comandos de diversión. Calcula el porcentaje de amor entre dos usuarios, obtén chistes aleatorios ¡y más!</p>
+          </div>
+          <div class="bot-feature-image">
+            <img class="feature-image" src="/img/fun-feature.png" alt="Fun Feature Image">
+          </div>
+        </div>
+        <div class="home-divider"></div>
+        <div class="bot-feature row-reverse animate__animated animate__fadeInUp">
+          <div class="bot-feature-text reverse">
+            <h3 class="bot-feature-title">Interacciones con gifs</h3>
+            <p class="bot-feature-description">Con los comandos de interacción podrás hacer que los miembros de tu servidor interactuen entre sí. Desde abrazos hasta golpes, incluso puedes irte a dormir cuando te de sueño.</p>
+          </div>
+          <div class="bot-feature-image">
+            <img class="feature-image" src="/img/interact-feature.png" alt="Interact Feature Image">
+          </div>
+        </div>
+        <div class="home-divider"></div>
+        <div class="bot-feature animate__animated animate__fadeInUp">
+          <div class="bot-feature-text">
+            <h3 class="bot-feature-title">¡Alegra tu servidor con música!</h3>
+            <p class="bot-feature-description">Disfruta de tus canciones favoritas de la mano de nuestro sistema de música. Puedes escuchar música con tus amigos añadiendo a la cola sus canciones favoritas e incluso añadir canciones a la sección "Mis Favoritas" y reproducirlas de acuerdo al orden en que las añadiste.</p>
+          </div>
+          <div class="bot-feature-image">
+            <img class="feature-image" src="/img/music-feature.png" alt="Music Feature Image">
+          </div>
+        </div>
+    </section>
   </main>
 </body>
 </html>
