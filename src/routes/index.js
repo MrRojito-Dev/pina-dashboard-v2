@@ -3,6 +3,7 @@ const router = express.Router();
 
 const passport = require('passport');
 const CheckAuth = require('../utils/auth.js');
+const fetch = require("node-fetch");
 
 // Home page
 router.get('/', async (req, res) => {
@@ -22,6 +23,27 @@ router.get('/premium', async (req, res) => {
     title: "Piña Bot",
     user
   })
+});
+
+// Comandos
+router.get("/comandos", async (req, res) => {
+  const user = await req.client.users.fetch(req.user ? req.user.id : null).catch(() => false);
+
+  let allCommands;
+  const commandsFetch = await fetch(`${process.env.FETCH}/commands`, {
+    method: "GET",
+    headers: {
+      "pass": `${process.env.ACCESS}`
+    }
+  })
+
+  if (commandsFetch.ok) allCommands = await commandsFetch.json();
+
+  res.render("comandos", {
+    title: "Piña Bot",
+    user,
+    allCommands: allCommands.filter(c => c.category !== "developer")
+  });
 });
 
 // Login

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title><%= title %></title>
+
+  <%- include('partials/header'); -%>
+
+  <link rel="stylesheet" href="/css/comandos.css">
+</head>
+<body>
+  <%- include('partials/navbar'); -%>
+
+  <main class="main-container text-center">
+    <h1><%= title %> <strong>Comandos</strong></h1>
+    <header class="commands-welcome">
+      <p class="commands-welcome-text">
+        Obten información detallada sobre cada uno de mis <% if (allCommands) %> <%= allCommands.length %> comandos. Podrás encontrar sus aliases, descripciones, ejemplos de uso y más. ;)
+      </p>
+    </header>
+    <section class="command-list">
+      <% if (allCommands) { %>
+        <% allCommands.forEach((cmd) => { %>
+          <div class="command-row container">
+            <div class="command-info">
+              <h4 class="command-name"><%= cmd.name %></h4>
+              <p class="command-description"><%= cmd.description %></p>
+              <p class="command-example">
+                Ejemplo de uso: <% if (cmd.example) { %>
+                  <code>p!<%= cmd.example %> </code>
+                <% } else { %>
+                  Ninguno
+                <% } %> 
+              </p>
+              <p class="command-aliases">
+                Aliases: <% if (cmd.alias.length) { %>
+                  <% cmd.alias.map((a) => { %>
+                    <code><%= a %></code> 
+                  <% }) %> 
+                <% } else { %>
+                  Ninguno 
+                <% } %> 
+              </p>
+              <span class="command-cooldown">
+                Cooldown: <code><%= cmd.cooldown %> seg.</code> 
+              </span>
+            </div>
+          </div>
+        <% }) %> 
+      <% } else { %>
+        <h3>No se pudo cargar la información de los comandos. F :(</h3>
+      <% } %> 
+    </section>
+  </main>
+</body>
+</html>
