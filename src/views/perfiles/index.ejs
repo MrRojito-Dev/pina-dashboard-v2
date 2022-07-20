@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title><%= title %></title>
+
+  <%- include('../partials/header'); -%>
+
+  <link rel="stylesheet" href="/css/perfiles/index.css">
+</head>
+<body>
+  <%- include('../partials/navbar'); -%>
+
+  <main class="main-container text-center">
+    <h1><%= title %> <strong>Perfil</strong></h1>
+    <header class="profile-welcome">
+      <p class="profile-welcome-text">
+      </p>
+    </header>
+    <% if (profile) { %> 
+    <section class="profile-card">
+            <div class="card-body">
+                <img src="<%= profile.profileData.user_avatarURL %> " alt="User Icon" class="card-body-img">
+                <h1 class="card-body-title">
+                    <%= profile.profileData.user_name %> 
+                </h1>
+                <p class="card-body-text"><%= profile.profileData.user_description %></p>
+            </div>
+            <div class="card-footer">
+                <div class="card-footer-social">
+                    <h3><%= profile.profileData.user_level %> </h3>
+                    <p>Nivel</p>
+                </div>
+                <div class="card-footer-social">
+                    <h3><%= profile.profileData.money %> </h3>
+                    <p>Coins</p>
+                </div>
+                <div class="card-footer-social">
+                    <h3><%= profile.profileData.frutas %> </h3>
+                    <p>Frutas</p>
+                </div>
+            </div>
+    </section>
+    <% } else { %>
+      <h3>perfil no encontrado... F</h3>
+    <% } %> 
+  </main>
+</body>
+</html>
