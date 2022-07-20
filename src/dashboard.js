@@ -59,11 +59,13 @@ module.exports = async (client) => {
 
     const routers = {
       index: require('./routes/index'),
-      dashboard: require('./routes/dashboard'),
+      dashboard: require('./routes/guilds'),
+      perfiles: require("./routes/perfil")
     };
 
     app.use('/', routers.index);
-    app.use('/dashboard', routers.dashboard);
+    app.use('/guilds', routers.dashboard);
+    app.use("/perfil", routers.perfiles);
 
     // 404 error page
     app.get('*', (req, res) => {

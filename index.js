@@ -1,9 +1,7 @@
 require('dotenv').config();
 const Dashboard = require("./src/dashboard.js");
 const config = require("./config.js");
-const models = {
-    reports: require('./src/database/models/reports.js'),
-};
+const models = {};
 
 const { Client, Intents} = require('discord.js');
 const client = new Client({
@@ -14,9 +12,7 @@ client.models = models;
 client.config = config;
 
 client.on("ready", async () => {
-
     console.log(`Discord App is ready. (${client.guilds.cache.size} Guilds)`);
-  
     Dashboard(client);
 });
 
