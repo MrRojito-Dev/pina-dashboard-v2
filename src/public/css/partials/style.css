@@ -125,3 +125,10 @@ a:hover {
 .yellow-primary {
   color: var(--yellow-primary);
 }
+
+.home-divider {
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff1a;
+  margin: 60px 0px;
+}

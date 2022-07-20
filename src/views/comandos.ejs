@@ -20,7 +20,7 @@
     <section class="command-list">
       <% if (allCommands) { %>
         <% allCommands.forEach((cmd) => { %>
-          <div class="command-row container">
+          <div id="<%= cmd.name %>" class="command-row container">
             <div class="command-info">
               <h4 class="command-name"><%= cmd.name %></h4>
               <p class="command-description"><%= cmd.description %></p>
@@ -45,6 +45,7 @@
               </span>
             </div>
           </div>
+          <div class="home-divider"></div>
         <% }) %> 
       <% } else { %>
         <h3>No se pudo cargar la información de los comandos. F :(</h3>

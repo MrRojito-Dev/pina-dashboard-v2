@@ -86,10 +86,3 @@
     text-align: right;
     align-items: flex-end;
 }
-
-.home-divider {
-    height: 1px;
-    width: 100%;
-    background-color: #ffffff1a;
-    margin: 60px 0px;
-}

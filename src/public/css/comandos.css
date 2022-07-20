@@ -1,3 +1,18 @@
+.commands-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0px auto;
+    padding: 0px 40px;
+}
+
+.commands-welcome-text {
+    margin-bottom: 40px;
+    width: min(100%, 600px);
+    font-size: 16px;
+}
+
 .command-row {
     display: flex;
     flex-direction: column;
