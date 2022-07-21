@@ -3,8 +3,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 0px auto;
-    padding: 0px 40px;
+    width: 100%;
 }
 
 .bot-description {
@@ -46,7 +45,7 @@
 
 @media screen and (min-width: 1024px) {
     .bot-features {
-        max-width: 960px;
+        max-width: 900px;
     }
 }
 
@@ -66,7 +65,6 @@
 }
 
 .bot-feature-text {
-    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -81,8 +79,34 @@
     border: 2px solid var(--dark-border);
 }
 
-
 .reverse {
     text-align: right;
     align-items: flex-end;
+}
+
+@media screen and (min-width: 725px) {
+    .bot-feature-text {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .bot-features {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    .bot-feature {
+        flex-direction: column;
+    }
+
+    .bot-feature-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .bot-feature-description {
+        text-align: center;
+    }
 }
