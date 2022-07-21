@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 
 router.get("/:userID", async (req, res) => {
   const user = await req.client.users.fetch(req.user ? req.user.id : null).catch(() => false);
-  const userProfile = await fetch(`${process.env.FETCH}/perfil/${req.params.userID}`, {
+  const userProfile = await fetch(`${process.env.FETCH}/profiles/${req.params.userID}`, {
       method: "GET",
       headers: {
         "pass": `${process.env.ACCESS}`
@@ -25,7 +25,7 @@ router.use(CheckAuth, async (req, res, next) => next());
 
 router.get("/", async (req, res) => {
     const user = await req.client.users.fetch(req.user ? req.user.id : null).catch(() => false);
-    const userProfile = await fetch(`${process.env.FETCH}/perfil/${req.user.id}`, {
+    const userProfile = await fetch(`${process.env.FETCH}/profiles/${req.user.id}`, {
         method: "GET",
         headers: {
           "pass": `${process.env.ACCESS}`

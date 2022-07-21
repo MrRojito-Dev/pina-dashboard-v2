@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+		<title>Dashboard | <%= title %></title>
+
+		<%- include('../partials/header'); -%>
+		<link rel="stylesheet" href="/css/dashboard/guild.css" />
+	</head>
+	<body>
+		<%- include('../partials/navbar'); -%>
+		<main class="main-container text-center" id="main">
+			<h1><%= title %> <strong>Dashboard (beta)</strong></h1>
+			<div class="main-content">
+                <% if (guild) { %>
+                    <h2><%= guild.name %></h2>
+                    <div class="guild-settings">
+                        <% if (guildSettings) { %>
+                            <div class="container">
+                                <h3>Idioma</h3>
+                                <%= guildSettings.guildData.lang.replace("es", "Español").replace("en", "English").replace("fr", "Français")%> 
+                            </div>
+                        <% } else { %>
+                            <h4>No se pudo cargar la configuración...</h4>
+                        <% } %>
+                        <a class="btn btn-warning w-50" href="/guilds">
+                            Volver a mis servidores
+                        </a>
+                    </div>
+                <% } else { %>
+                    <h4>¡No disponible!</h4>
+                    <a class="btn btn-warning w-50" href="/guilds">
+                        Volver a mis servidores
+                    </a>
+                <% } %> 
+		    </div>
+	    </main>
+    </body>
+</html>

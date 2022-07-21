@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
-const passport = require('passport');
 const CheckAuth = require('../utils/auth');
 const utils = require('../utils/utils');
+const fetch = require("node-fetch");
 
 router.use(CheckAuth, async (req, res, next) => {
   try {
@@ -20,7 +19,7 @@ router.use(CheckAuth, async (req, res, next) => {
 router.get('/', async (req, res) => {
   const user = await req.client.users.fetch(req.user.id);
 
-  const adminguilds = req.user.guilds.filter(e => utils.getPermissions(e.permissions).get("ADMINISTRATOR"));
+  const adminguilds = req.user.guilds.filter(e => utils.getPermissions(e.permissions).get("MANAGE_GUILD"));
   const guildsBotIn = req.user.toShowGuilds;
   const guildsBotNotIn = adminguilds.filter(x => !guildsBotIn.map(g => g.id).includes(x.id));
 
@@ -31,26 +30,25 @@ router.get('/', async (req, res) => {
     title: "Piña Bot",
     load: false
   });
-
 });
 
-router.get('/admin', CheckAuth, async (req, res) => {
-  if (req.user.id !== "648654138929840164") {
-    return res.status(403).send(`¡No puedes estar aquí!<br><a href="/">Ir al inicio </a>`)
-  }
+router.get("/:guildID", async (req, res) => {
+  const user = await req.client.users.fetch(req.user.id);
+  const guild = req.user.toShowGuilds.find(e => e.id === req.params.guildID);
 
-  const user = await req.client.users.fetch(req.user.id).catch(() => false);
+  const guildSettings = await fetch(`${process.env.FETCH}/guilds/${req.params.guildID}`, {
+    method: "GET",
+    headers: {
+      "pass": `${process.env.ACCESS}`
+    }
+  });
 
-  if (user) {
-    res.json({
-      user: user,
-      guilds: req.user.guilds
-    });
-
-  } else {
-    return res.send(`No se pudo obtener tus datos...<br><a href="/">Ir al inicio </a>`);
-  }
-
+  res.render("dashboard/guild", {
+    title: "Piña Bot",
+    user,
+    guild,
+    guildSettings: guildSettings.ok ? await guildSettings.json() : null
+  });
 });
 
 module.exports = router;

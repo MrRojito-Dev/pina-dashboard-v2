@@ -46,6 +46,26 @@ router.get("/comandos", async (req, res) => {
   });
 });
 
+/* Dev test */
+router.get('/dev', CheckAuth, async (req, res) => {
+  if (req.user.id !== "883720498272403516") {
+    return res.status(403).send(`¡No puedes estar aquí!<br><a href="/">Ir al inicio </a>`)
+  }
+
+  const user = await req.client.users.fetch(req.user.id).catch(() => false);
+
+  if (user) {
+    res.json({
+      user: user,
+      reqUser: req.user
+    });
+
+  } else {
+    return res.send(`No se pudo obtener tus datos...<br><a href="/">Ir al inicio </a>`);
+  }
+
+});
+
 // Login
 router.get('/login', (req, res, next) => {
   if (req.query.error === 'access_denied') {
