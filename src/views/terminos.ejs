@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title><%= title %></title>
+
+  <%- include('partials/header'); -%>
+
+  <link rel="stylesheet" href="/css/comandos.css">
+</head>
+<body>
+  <%- include('partials/navbar'); -%>
+
+  <main class="main-container text-center">
+    <h1><%= title %> <strong>Términos</strong></h1>
+    <header class="terms-header container">
+        <div class="terms-service">
+            <p>
+                Para ver los Términos de servicio, haz click <a href="https://cdn.discordapp.com/attachments/964711228792508436/986811798898487336/Terminos_de_servicio.pdf">aquí</a>
+            </p>
+        </div>
+        <div class="terms-privacy">
+            <p>
+                Para ver la Politica de privacidad, haz click <a href="https://cdn.discordapp.com/attachments/964711228792508436/986811798638428252/Politica_de_privacidad.pdf">aquí</a>
+            </p>
+        </div>
+    </header>
+  </main>
+</body>
+</html>

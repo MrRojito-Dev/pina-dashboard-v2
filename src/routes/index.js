@@ -66,6 +66,16 @@ router.get('/dev', CheckAuth, async (req, res) => {
 
 });
 
+// Terms
+router.get('/terms', async (req, res) => {
+  const user = await req.client.users.fetch(req.user ? req.user.id : null).catch(() => false);
+
+  res.render('terminos', {
+    title: "Piña Bot",
+    user
+  })
+});
+
 // Login
 router.get('/login', (req, res, next) => {
   if (req.query.error === 'access_denied') {
