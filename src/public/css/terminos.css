@@ -1,0 +1,27 @@
+.terms-service {
+    margin: 20px 0 60px;
+}
+
+.terms-service-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 30px;
+}
+
+.terms-privacy-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 30px;
+}
+
+.terms-privacy-text h4 {
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+}
