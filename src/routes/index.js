@@ -66,12 +66,22 @@ router.get('/dev', CheckAuth, async (req, res) => {
 
 });
 
-// Terms
-router.get('/terms', async (req, res) => {
+// Privacidad
+router.get('/privacy', async (req, res) => {
+  const user = await req.client.users.fetch(req.user ? req.user.id : null).catch(() => false);
+
+  res.render('privacidad', {
+    title: "Piña Bot | Privacidad",
+    user
+  })
+});
+
+// Términos
+router.get('/tos', async (req, res) => {
   const user = await req.client.users.fetch(req.user ? req.user.id : null).catch(() => false);
 
   res.render('terminos', {
-    title: "Piña Bot",
+    title: "Piña Bot | Términos",
     user
   })
 });

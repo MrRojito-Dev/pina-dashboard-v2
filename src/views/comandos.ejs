@@ -6,6 +6,7 @@
   <%- include('partials/header'); -%>
 
   <link rel="stylesheet" href="/css/comandos.css">
+  <script src="/js/commands.js"/></script>
 </head>
 <body>
   <%- include('partials/navbar'); -%>
@@ -18,9 +19,23 @@
       </p>
     </header>
     <section class="command-list">
+      <div class="dropdown">
+        <a data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" role="button">
+          <span>Categoría</span>
+        </a>
+        <div id="dropdown-menu" class="dropdown-menu">
+            <a class="dropdown-item">Bot</a>
+            <a class="dropdown-item">Economía</a>
+            <a class="dropdown-item">Música</a>
+            <a class="dropdown-item">Diversión</a>
+            <a class="dropdown-item">Utilidad</a>
+            <a class="dropdown-item">Interacción</a>
+            <a class="dropdown-item">Configuración</a>
+          </div>
+      </div>
       <% if (allCommands) { %>
         <% allCommands.forEach((cmd) => { %>
-          <div id="<%= cmd.name %>" class="command-row container">
+          <div id="<%= cmd.name %>" class="command-row container <%= cmd.category %>">
             <div class="command-info">
               <h4 class="command-name"><%= cmd.name %></h4>
               <p class="command-description"><%= cmd.description %></p>
@@ -52,5 +67,6 @@
       <% } %> 
     </section>
   </main>
+  <%- include('partials/footer'); -%>
 </body>
 </html>

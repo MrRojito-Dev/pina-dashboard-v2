@@ -1,0 +1,35 @@
+.footer {
+    padding: 40px 0;
+    background-color: var(--body-bg-dark);
+    border-top: 2px solid var(--dark-border);
+}
+  
+.footer ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+  
+.footer li {
+    padding: 0 10px;
+}
+  
+.footer ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+  
+.footer ul a:hover {
+    opacity: 1;
+}
+  
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 0;
+}
